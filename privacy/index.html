@@ -36,7 +36,8 @@
       <ul>
         <li>Fizzy yalnızca sipariş, yorum, destek talebi, soru sırası, sohbet limiti ve kötüye kullanımı önleme için gereken bilgileri kullanır.</li>
         <li>Bilgileriniz satılmaz ve reklam amacıyla kullanılmaz. Ses özelliğinde yalnızca mesajın metni (sizin bilginiz değil) bir ses servisine gönderilir.</li>
-        <li>Sitedeki mağazadan sipariş vermek ve yorum yazmak için Discord ile giriş yaparsınız. Yalnızca Discord kullanıcı kimliğiniz ve kullanıcı adınız alınır; e-posta adresiniz, sunucu listeniz ve mesajlarınız alınmaz.</li>
+        <li>Sitedeki mağazadan sipariş vermek ve yorum yazmak için Discord ile ya da CW PLAY hesabıyla giriş yaparsınız. Discord ile girişte yalnızca Discord kullanıcı kimliğiniz ve kullanıcı adınız alınır. CW PLAY hesabında e-posta adresiniz, kullanıcı adınız ve şifrenizin geri çözülemeyen bir özeti saklanır; şifrenizin kendisi saklanmaz.</li>
+        <li>Siteden gelen siparişler, yorumlar ve CW Credits talepleri Discord'un yanı sıra Cold Works Production'ın özel e-posta kutusuna da iletilir.</li>
         <li>Sitedeki mağazadan sipariş verdiğinizde IP adresiniz Fizzy tarafından saklanmaz; yalnızca ondan türetilen kısa bir kod kısa süre tutulur.</li>
         <li>CW Credits kullanırsanız Discord kimliğiniz ve kullanıcı adınızla birlikte bakiyeniz, kredi talepleriniz ve kredi hareketleriniz saklanır. Talepler 7/24 değil, Cold Works Production tarafından elle incelenir.</li>
         <li>İstediğiniz zaman verilerinizin silinmesini isteyebilirsiniz.</li>
@@ -107,7 +108,7 @@
         <p>cwplaymusic.com'daki mağazadan sipariş verdiğinizde ya da yorum yazdığınızda şu bilgiler işlenir:</p>
         <ul>
           <li>Seçtiğiniz ürün ve işlemin türü (sipariş ya da yorum)</li>
-          <li>Discord ile giriş yaptığınız hesabın kullanıcı kimliği ve kullanıcı adı (doğrulanmıştır)</li>
+          <li>Giriş yaptığınız hesabın kimliği ve kullanıcı adı (Discord ya da CW PLAY hesabı; doğrulanmıştır). CW PLAY hesabıyla gönderilen siparişlerde, size yanıt verilebilmesi için hesabınızın e-posta adresi de Cold Works Production'a iletilir.</li>
           <li>Yazdığınız not ya da yorum</li>
           <li>Gönderim zamanı</li>
           <li>Kötüye kullanımı önlemek için bağlantınızın IP adresinden türetilen kısa bir kod (aşağıya bakın)</li>
@@ -128,15 +129,33 @@
       </div>
 
       <div class="data">
-        <h3>CW Credits</h3>
-        <p>CW Credits, sitedeki mağazada kullanılan ve parasal değeri olmayan bir mağaza kredisidir. CW Credits kullanırsanız, Discord ile giriş yaptığınız hesaba bağlı olarak şu bilgiler saklanır:</p>
+        <h3>CW PLAY hesabı (e-posta ile giriş)</h3>
+        <p>Discord kullanmıyorsanız sitede bir CW PLAY hesabı açabilirsiniz. Bu durumda şu bilgiler saklanır:</p>
         <ul>
-          <li>Discord kullanıcı kimliğiniz (ID) ve kullanıcı adınız</li>
+          <li>E-posta adresiniz ve kullanıcı adınız</li>
+          <li>Şifrenizin geri çözülemeyen bir özeti (bcrypt). Şifrenizin kendisi hiçbir yerde saklanmaz; Cold Works Production dahil kimse onu göremez.</li>
+          <li>Hesabın doğrulanıp doğrulanmadığı, oluşturulma ve son giriş zamanı</li>
+        </ul>
+        <p>E-posta adresinize yalnızca hesabınızla ilgili e-postalar gönderilir: hesabı doğrulama bağlantısı, şifre sıfırlama bağlantısı, biri sizin adresinizle yeni hesap açmaya çalışırsa bilgilendirme ve siparişlerinize verilen yanıtlar. Reklam veya bülten gönderilmez. E-postalar noreply@cwplaymusic.com adresinden, sitenin barındırma sağlayıcısının e-posta sunucusu üzerinden gönderilir.</p>
+        <p>Şifre tahmin denemelerini önlemek için başarısız giriş, kayıt ve şifre sıfırlama denemeleri; e-posta adresinin geri çözülemeyen bir özeti ve IP kodu ile en fazla 24 saat tutulur.</p>
+      </div>
+
+      <div class="data">
+        <h3>Siparişlerin e-postayla iletilmesi</h3>
+        <p>Siteden gelen siparişler, yorumlar, CW Credits talepleri ve CW Credits ile yapılan satın almalar, Fizzy'nin Discord bildirimine ek olarak Cold Works Production'ın özel e-posta kutusuna da gönderilir. E-postada Discord bildirimindeki bilgilerin aynısı bulunur; CW PLAY hesabıyla gönderilenlerde ayrıca size yanıt verilebilmesi için e-posta adresiniz yer alır. Bu e-posta kutusu yalnızca Cold Works Production tarafından kullanılır.</p>
+      </div>
+
+      <div class="data">
+        <h3>CW Credits</h3>
+        <p>CW Credits, sitedeki mağazada kullanılan ve parasal değeri olmayan bir mağaza kredisidir. CW Credits kullanırsanız, giriş yaptığınız hesaba (Discord ya da CW PLAY hesabı) bağlı olarak şu bilgiler saklanır:</p>
+        <ul>
+          <li>Hesap kimliğiniz (Discord ID'niz ya da CW PLAY hesap numaranız) ve kullanıcı adınız</li>
           <li>CW Credits bakiyeniz</li>
           <li>Kredi talepleriniz: istediğiniz miktar, yazdığınız not, gönderim zamanı, talebin durumu (bekliyor, onaylandı, reddedildi) ve karar zamanı</li>
           <li>Kredi hareketleriniz: tarih, miktar, açıklama (örneğin "Talep onaylandı", satın alınan ürünün adı, iade veya elle düzeltme) ve hareket sonrası bakiye</li>
+          <li>Abonelikleriniz: ürün, aylık fiyat, başlangıç ve sonraki ödeme tarihi, durumu (aktif, ödeme bekleniyor, iptal) ve iptal nedeni</li>
         </ul>
-        <p>Bir talep gönderdiğinizde Cold Works Production'a Fizzy aracılığıyla Discord'da kullanıcı adınızı, Discord etiketinizi, istenen miktarı ve notunuzu içeren bir bildirim gider. Talepler 7/24 değil, Cold Works Production'ın müsait olduğu zamanlarda elle incelenir.</p>
+        <p>Bir talep gönderdiğinizde Cold Works Production'a Fizzy aracılığıyla Discord'da ve e-postayla kullanıcı adınızı, hesabınızı (Discord etiketiniz ya da CW PLAY hesabınızın e-posta adresi), istenen miktarı ve notunuzu içeren bir bildirim gider. Talepler 7/24 değil, Cold Works Production'ın müsait olduğu zamanlarda elle incelenir.</p>
         <p>CW Credits ile satın alma yaptığınızda Cold Works Production'a ürün, ödenen ve kalan kredi, notunuz, kullanıcı adınız, Discord etiketiniz ve kötüye kullanımı önlemek için IP kodu (aşağıya bakın) iletilir.</p>
         <p>Bu kayıtlar sipariş formunun gönderildiği sunucuda (medya.cwplaymusic.com), herkese açık olmayan bir veritabanında tutulur. Kayıtları yalnızca Cold Works Production görebilir; siz de kendi bakiyenizi, taleplerinizi ve hareketlerinizi Cüzdan sayfasında görebilirsiniz.</p>
       </div>
@@ -146,16 +165,16 @@
         <p>Sahte siparişleri, spam'i ve hakareti önlemek için siteden gönderilen sipariş ve yorumlarda şu önlemler uygulanır:</p>
         <ul>
           <li><strong>IP kodu:</strong> Bağlantınızın IP adresi, gizli bir anahtarla şifrelenerek 12 karakterlik bir koda dönüştürülür. Fizzy IP adresinizi saklamaz, yalnızca bu kodu kullanır. Kod; gönderim sınırlarını uygulamak, aynı ürüne tekrar sipariş verilmesini önlemek ve gerektiğinde bir bağlantıyı engellemek için kullanılır.</li>
-          <li><strong>Sınırlar ve tekrar kontrolü:</strong> Kısa sürede ve gün içinde gönderilebilecek sipariş sayısı sınırlıdır; sınırlar IP koduna ve Discord hesabına göre ayrı ayrı uygulanır. Aynı istek art arda gönderilirse yalnızca bir kez iletilir.</li>
+          <li><strong>Sınırlar ve tekrar kontrolü:</strong> Kısa sürede ve gün içinde gönderilebilecek sipariş sayısı sınırlıdır; sınırlar IP koduna ve hesaba göre ayrı ayrı uygulanır. Aynı istek art arda gönderilirse yalnızca bir kez iletilir.</li>
           <li><strong>Metin denetimi:</strong> Notlarda ve yorumlarda küfür ya da bağlantı olup olmadığı otomatik olarak kontrol edilir. Bu kontrol yalnızca gönderimi reddeder, reddedilen metin saklanmaz.</li>
-          <li><strong>Engelleme:</strong> Kötüye kullanım tespit edilirse ilgili Discord hesabı ve/veya IP kodu Cold Works Production tarafından engellenebilir. Engel kaydı yalnızca Discord kimliğini ya da IP kodunu içerir ve engel kaldırılana kadar tutulur.</li>
+          <li><strong>Engelleme:</strong> Kötüye kullanım tespit edilirse ilgili hesap (Discord ya da CW PLAY hesabı) ve/veya IP kodu Cold Works Production tarafından engellenebilir. Engel kaydı yalnızca hesap kimliğini ya da IP kodunu içerir ve engel kaldırılana kadar tutulur.</li>
           <li><strong>Bildirim:</strong> Engellenen denemeler (küfür, bağlantı, çok fazla gönderim gibi) Cold Works Production'a, kullanıcı adı ve IP koduyla birlikte bildirilebilir.</li>
         </ul>
         <p>Siteyi ve sipariş formunu barındıran sağlayıcıların sunucu kayıtlarında (erişim günlükleri) IP adresiniz, bu sağlayıcıların kendi politikalarına göre teknik olarak tutulabilir. Fizzy bu kayıtları sipariş ve yorumlarla eşleştirmez.</p>
       </div>
 
       <h3>Toplanmayan bilgiler</h3>
-      <p>Fizzy; e-posta adresinizi, gerçek adınızı, telefon numaranızı, konumunuzu veya herhangi bir ödeme bilgisini istemez ve toplamaz. Mağazadaki hizmetler için ödeme para ile değil; ücretsiz, Discord rolü, kredi/atıf veya CW Credits karşılığında yapılır. CW Credits parayla satın alınamaz.</p>
+      <p>Fizzy; gerçek adınızı, telefon numaranızı, konumunuzu veya herhangi bir ödeme bilgisini istemez ve toplamaz. E-posta adresiniz yalnızca bir CW PLAY hesabı açarsanız alınır. Mağazadaki hizmetler için ödeme para ile değil; ücretsiz, Discord rolü, kredi/atıf veya CW Credits karşılığında yapılır. CW Credits parayla satın alınamaz.</p>
     </section>
 
     <section id="kullanim">
@@ -168,6 +187,7 @@
         <li>Sohbet limitini uygulamak ve limit durumunuzu göstermek.</li>
         <li>Mesajları sesle okuyabilmek (ses özelliği).</li>
         <li>Siteden gelen siparişleri ve yorumları iletmek; sahte sipariş, spam ve hakaret gibi kötüye kullanımı önlemek.</li>
+        <li>CW PLAY hesabınızı oluşturmak ve doğrulamak, giriş yapmanızı sağlamak, şifrenizi sıfırlamak ve CW PLAY hesabıyla verdiğiniz siparişlere e-postayla yanıt vermek.</li>
         <li>CW Credits bakiyenizi tutmak, kredi taleplerinizi değerlendirmek ve CW Credits ile verdiğiniz siparişleri işlemek.</li>
       </ul>
       <p>Bilgileriniz bu amaçlar dışında kullanılmaz, satılmaz ve reklam için kullanılmaz.</p>
@@ -176,8 +196,9 @@
     <section id="paylasim">
       <h2>Bilgiler kimlerle paylaşılır?</h2>
       <p>Bilgileriniz üçüncü taraflarla paylaşılmaz. Fizzy, Discord platformu üzerinde çalıştığı için tüm mesajlar ve etkileşimler Discord aracılığıyla iletilir; Discord'un bu verileri nasıl işlediği <a href="https://discord.com/privacy" rel="noopener">Discord Gizlilik Politikası</a>'nda açıklanmıştır.</p>
-      <p>İki durumda teknik olarak üçüncü taraf hizmetler devreye girer. Birincisi ses özelliğidir: butona bastığınızda mesajın metni, sesi oluşturmak için Microsoft'un metin okuma servisine gönderilir. Bu metin sizin bilginiz değil, Cold Works Production'ın yazdığı mesajdır.</p>
-      <p>İkincisi cwplaymusic.com'daki mağazadır: siteyi (GitHub) ve sipariş formunun gönderildiği sunucuyu barındıran sağlayıcılar, sitenin çalışması için bağlantınızın IP adresini ve gönderdiğiniz bilgileri teknik olarak işler. Siteye giriş Discord'un kendi sayfasında yapılır; Discord bu girişi kendi Gizlilik Politikası'na göre işler. Fizzy bu bilgileri reklam veya başka amaçlarla kullanmaz.</p>
+      <p>Üç durumda teknik olarak üçüncü taraf hizmetler devreye girer. Birincisi ses özelliğidir: butona bastığınızda mesajın metni, sesi oluşturmak için Microsoft'un metin okuma servisine gönderilir. Bu metin sizin bilginiz değil, Cold Works Production'ın yazdığı mesajdır.</p>
+      <p>İkincisi cwplaymusic.com'daki mağazadır: siteyi (GitHub) ve sipariş formunun gönderildiği sunucuyu barındıran sağlayıcılar, sitenin çalışması için bağlantınızın IP adresini ve gönderdiğiniz bilgileri teknik olarak işler. Discord ile giriş, Discord'un kendi sayfasında yapılır; Discord bu girişi kendi Gizlilik Politikası'na göre işler. Fizzy bu bilgileri reklam veya başka amaçlarla kullanmaz.</p>
+      <p>Üçüncüsü e-postadır: hesap e-postaları sitenin barındırma sağlayıcısının e-posta sunucusu üzerinden gönderilir; siparişlerin e-posta kopyaları Cold Works Production'ın Google (Gmail) e-posta kutusunda tutulur ve Google tarafından e-posta hizmeti kapsamında işlenir.</p>
     </section>
 
     <section id="saklama">
@@ -189,7 +210,9 @@
         <li><strong>Siteden verilen siparişler ve yorumlar:</strong> Fizzy bunları ayrı bir kayıtta saklamaz; Cold Works Production'ın Discord mesaj geçmişinde durur ve talep etmeniz halinde silinir. Aynı ürüne tekrar sipariş verilmesini önlemek için kullanıcı adınız, Discord kimliğiniz ve IP kodunuz en fazla 48 saat, aynı isteğin art arda gönderilmesini fark etmek için isteğin kısa bir özeti en fazla 1 saat tutulur.</li>
         <li><strong>IP kodu ve Discord kimliği (gönderim sınırları):</strong> En fazla 24 saat tutulur.</li>
         <li><strong>Engel kaydı:</strong> Yalnızca IP kodu ya da Discord kimliği, engel kaldırılana kadar tutulur.</li>
-        <li><strong>CW Credits:</strong> Bakiyeniz, hesabınızda CW Credits bulunduğu sürece ya da siz silinmesini isteyene kadar tutulur. Karar verilmiş talepler en son 300 talep, kredi hareketleri en son 1000 hareket içinde kaldığı sürece saklanır; daha eskiler kendiliğinden silinir. Bekleyen talepler karar verilene kadar tutulur. Kayıtlarınızın silinmesini istediğinizde bakiyeniz de silinir.</li>
+        <li><strong>CW Credits:</strong> Bakiyeniz, hesabınızda CW Credits bulunduğu sürece ya da siz silinmesini isteyene kadar tutulur. Karar verilmiş talepler en son 300 talep, kredi hareketleri en son 1000 hareket içinde kaldığı sürece saklanır; daha eskiler kendiliğinden silinir. Bekleyen talepler karar verilene kadar, aktif abonelikler sona erene kadar tutulur; sona eren aboneliklerden en yeni 200'ü saklanır. Kayıtlarınızın silinmesini istediğinizde bakiyeniz de silinir.</li>
+        <li><strong>CW PLAY hesabı:</strong> Siz silinmesini isteyene ya da hesap bu politikaya veya Kullanım Şartları'na aykırılık nedeniyle kapatılana kadar tutulur. Doğrulanmamış hesaplar Cold Works Production tarafından silinebilir.</li>
+        <li><strong>Siparişlerin e-posta kopyaları:</strong> Cold Works Production'ın e-posta kutusunda, Cold Works Production silene kadar tutulur.</li>
         <li><strong>Giriş jetonu:</strong> Tarayıcınızda en fazla 24 saat, sekmeyi kapatana ya da çıkış yapana kadar tutulur. Fizzy'nin sunucusunda saklanmaz.</li>
         <li><strong>Soru sırası:</strong> Sıradan çıkarılana kadar tutulur.</li>
         <li><strong>Sohbet limiti:</strong> Yüzde günlük olarak sıfırlanır; kaydınızın tamamen silinmesini isteyebilirsiniz.</li>
@@ -200,7 +223,7 @@
       <h2>Haklarınız</h2>
       <p>Hakkınızda hangi bilgilerin tutulduğunu öğrenmek, bu bilgilerin düzeltilmesini veya silinmesini istemek için bizimle iletişime geçebilirsiniz. Talebiniz en kısa sürede yanıtlanır.</p>
       <p>Siteden gönderim yaparken haksız yere engellendiğinizi düşünüyorsanız aynı şekilde bize ulaşabilirsiniz. Engeli bulabilmemiz için giriş yaptığınız Discord kullanıcı adını ve gönderim zamanını bildirmeniz yeterlidir.</p>
-      <p>Discord ile girişi istediğiniz zaman sonlandırabilirsiniz: Discord'da Kullanıcı Ayarları > Yetkili Uygulamalar bölümünden Fizzy'nin erişimini kaldırabilirsiniz. Discord kimliğinize bağlı kayıtların silinmesini de isteyebilirsiniz. CW Credits kayıtlarınızın (bakiye, talepler ve hareketler) silinmesini istediğinizde bakiyeniz de sıfırlanır.</p>
+      <p>Discord ile girişi istediğiniz zaman sonlandırabilirsiniz: Discord'da Kullanıcı Ayarları > Yetkili Uygulamalar bölümünden Fizzy'nin erişimini kaldırabilirsiniz. Discord kimliğinize bağlı kayıtların silinmesini de isteyebilirsiniz. CW PLAY hesabınızın ve ona bağlı tüm kayıtların silinmesini de istediğiniz zaman isteyebilirsiniz. CW Credits kayıtlarınızın (bakiye, talepler ve hareketler) silinmesini istediğinizde bakiyeniz de sıfırlanır.</p>
       <p>Türkiye'de yaşıyorsanız, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 11. maddesinde sayılan haklarınız saklıdır.</p>
     </section>
 
